@@ -5,9 +5,9 @@ function Ball() {
   this.width = 20;
   this.height = 20;
   this.ax = 0;
-  
+
   this.name = "ball";
-  
+
   var player = document.createElement("div");
   player.style.position = "absolute";
   player.style.width = this.width + 'px';
@@ -16,7 +16,7 @@ function Ball() {
   player.style.top = this.y + 'px';
   player.setAttribute("id", "ball");
   this.player = player;
-  
+
   game.canvas.append(player);
 
   this.reset();
@@ -34,8 +34,8 @@ Ball.prototype.moveTo = function (ball) {
 
 Ball.prototype.draw = function () {
   var player = this.player;
-  player.style.left = this.x +'px';
-  player.style.top = this.y +'px';
+  player.style.left = this.x + 'px';
+  player.style.top = this.y + 'px';
 }
 
 Ball.prototype.reset = function () {
@@ -43,8 +43,7 @@ Ball.prototype.reset = function () {
   this.y = game.height / 2 - this.height; // center ball vertically
 
   // Set random values if ball goes offscreen
-  var min = -5,
-    max = 5;
+  let min = -5, max = 5;
 
   this.yVelocity = Math.floor(Math.random() * (max - min + 1) + min);
   this.xVelocity = Math.random() > 0.5 ? 5 : -5; // 50% chance of starting from left or right
@@ -70,7 +69,7 @@ Ball.prototype.update = function () {
   }
 
   var hitter;
-  
+
   if (this.intersect(game.bot)) {
     hitter = game.bot;
   } else if (this.intersect(game.player)) {

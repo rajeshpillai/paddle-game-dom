@@ -1,63 +1,76 @@
 <!doctype HTML>
 <html>
 
-    <head>
-        <title>DOM: Paddle Game</title>
-        <style type="text/css">
-        
-          #game {
-            position: relative;
-            width: 640px;
-            height: 480px;
-            background-color: black;
-          }
-          
-          
-          #score_player1, #score_player2 {
-            position: absolute;
-          }
-          
-          #score_player1 {
-             left: 150px;
-             top: 50px;
-             background-color: greenyellow;
-          }
-          
-          #score_player2 {
-            left: 290px;
-            top: 50px;
-            background-color: lightcyan;
-          }
-          
-          #player {
-            background-color: greenyellow;
-          }
-          
-          #bot {
-            background-color: blue;
-          }
-          
-          #ball{
-            background-color: red;
-            border-radius: 50%;
-          }
-        </style>  
-  </head>
-  
-  <body>
-    <h2>Paddle Game: DOM version</h2>
-  
-    <div id="game">
-        <span id="score_player1">ME: </span>    
-        <span id="score_player2">BOT: </span>    
-    </div>
-    
-    <script src="game/entity.js"></script>
-    <script src="game/paddle.js"></script>
-    <script src="game/ball.js"></script>
-    <script src="game/game.js"></script>
-    <script src="game/pong.js"></script>
-    
-  </body>
-</html>
+<head>
+  <title>DOM: Paddle Game</title>
+  <style type="text/css">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
+    #game {
+      position: relative;
+      width: 640px;
+      height: 480px;
+      background-color: black;
+    }
+
+
+    #score_player1,
+    #score_player2 {
+      position: absolute;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    #score_player1 {
+      left: 150px;
+      top: 50px;
+      background-color: greenyellow;
+    }
+
+    #score_player2 {
+      left: 290px;
+      top: 50px;
+      background-color: blue;
+      color: white;
+    }
+
+    #player,
+    #bot {
+      border-radius: 3px;
+    }
+
+    #player {
+      background-color: greenyellow;
+    }
+
+    #bot {
+      background-color: blue;
+    }
+
+    #ball {
+      background-color: red;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Paddle Game: DOM version</h2>
+
+  <div id="game">
+    <span id="score_player1">ME: </span>
+    <span id="score_player2">BOT: </span>
+  </div>
+
+  <script src="game/entity.js"></script>
+  <script src="game/paddle.js"></script>
+  <script src="game/ball.js"></script>
+  <script src="game/game.js"></script>
+  <script src="game/background.js"></script>
+  <script src="game/start.js"></script>
+
+</body>
+
+</html>
