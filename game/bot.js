@@ -2,6 +2,7 @@ function Bot() {
     Paddle.call(this);
     this.name = "bot";
     this.auto = true;   // set this to false to work with manual control
+    this.speed = 5;
     this.x = game.width - this.width - 20; // 20 margin
     
     var player = document.createElement("div");
@@ -27,14 +28,13 @@ function Bot() {
   
   
   Bot.prototype.update = function () {
-    var speed = 5; // speed is set to lower than human controlled paddle
     var self = this;
     
     // Bot will follow the ball (simple AI)
     if (self.y < game.ball.y) {
-      self.yVelocity = speed;
+      self.yVelocity = this.speed;
     } else if (self.y > game.ball.y) {
-      self.yVelocity = -speed;
+      self.yVelocity = -this.speed;
     }
   
     Paddle.prototype.update.apply(this, arguments);
