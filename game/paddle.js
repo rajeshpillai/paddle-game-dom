@@ -19,14 +19,6 @@ Paddle.prototype.update = function () {
   this.y = Math.min(Math.max(this.y, 0), game.height - this.height);
 }
 
-Paddle.prototype.moveTo = function (player) {
-  this.x = player.x;
-  this.y = player.y;
-  this.xVelocity = player.xVelocity;
-  this.yVelocity = player.yVelocity;
-};
-
-
 function Player() {
   Paddle.call(this);
   this.x = 20;
